@@ -8,7 +8,7 @@ const equiposProvincia = (arrayEquipos, provincia) =>
   );
 
 const provincias = (arrayEquipos) => [
-  Array.from(new Set(arrayEquipos.map((equipo) => equipo.asignado.provincia))),
+  ...new Set(arrayEquipos.map((equipo) => equipo.asignado.provincia)),
 ];
 
 const puestos = (arrayEquipos) => {};

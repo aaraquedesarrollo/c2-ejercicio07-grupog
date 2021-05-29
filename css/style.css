@@ -1,29 +1,30 @@
 :root {
   --color-principal: #90a081;
   --color-secundario: #f1ac7b;
-  --color-botones: #FFC107;
+  --color-botones: #ffc107;
   --color-consola: #1e1e1e;
   --color-letra-consola: #16a55b;
-  --color-letra-botones: #5e2629;
+  --color-letra-botones: #212529;
 }
-section{
+.principal {
   background-color: var(--color-principal);
-
 }
-button{
+.boton {
   background-color: var(--color-botones);
-  width: 224px;
-  height: 76px;
-  display: inline-block;
-  margin-bottom: 70px;
-
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--color-letra-botones);
 }
-aside{
+.sidebar {
   background-color: var(--color-secundario);
 }
-.cajaNegra{
+.cajaNegra {
   background-color: black;
+  margin-top: 70px;
+  max-height: 750px;
+  min-height: 750px;
 }
-p{
-  color:chartreuse;
+.consola {
+  color: var(--color-letra-consola);
 }
