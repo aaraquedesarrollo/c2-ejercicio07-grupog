@@ -17,7 +17,10 @@ const edadMedia = (arrayEquipos) => {};
 
 const equiposPorEdad = (arrayEquipos) => {};
 
-const equiposTipo = (arrayEquipos, tipo) => {};
+const equiposTipo = (arrayEquipos, tipo) =>
+  arrayEquipos.filter(
+    (equipo) => equipo.tipo.toLowerCase() === tipo.toLowerCase()
+  );
 
 const trabajadoresTipo = (arrayEquipos, tipo) => {};
 
