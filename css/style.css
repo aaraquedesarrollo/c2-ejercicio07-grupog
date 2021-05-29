@@ -1,8 +1,29 @@
 :root {
   --color-principal: #90a081;
   --color-secundario: #f1ac7b;
-  --color-botones: #90a081;
+  --color-botones: #FFC107;
   --color-consola: #1e1e1e;
   --color-letra-consola: #16a55b;
   --color-letra-botones: #5e2629;
+}
+section{
+  background-color: var(--color-principal);
+
+}
+button{
+  background-color: var(--color-botones);
+  width: 224px;
+  height: 76px;
+  display: inline-block;
+  margin-bottom: 70px;
+
+}
+aside{
+  background-color: var(--color-secundario);
+}
+.cajaNegra{
+  background-color: black;
+}
+p{
+  color:chartreuse;
 }
