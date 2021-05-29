@@ -1,4 +1,5 @@
-const equiposMayoresEdad = (arrayEquipos, edad) => {};
+const equiposMayoresEdad = (arrayEquipos, edad) =>
+  arrayEquipos.filter((equipo) => equipo.asignado.empleado.edad >= edad);
 
 const equiposProvincia = (arrayEquipos, provincia) => {};
 
