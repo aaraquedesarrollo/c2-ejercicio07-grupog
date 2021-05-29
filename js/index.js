@@ -2,9 +2,14 @@ const equiposMayoresEdad = (arrayEquipos, edad) =>
   arrayEquipos.filter((equipo) => equipo.asignado.empleado.edad >= edad);
 
 const equiposProvincia = (arrayEquipos, provincia) =>
-  arrayEquipos.filter((equipo) => equipo.asignado.provincia === provincia);
+  arrayEquipos.filter(
+    (equipo) =>
+      equipo.asignado.provincia.toLowerCase() === provincia.toLowerCase()
+  );
 
-const provincias = (arrayEquipos) => {};
+const provincias = (arrayEquipos) => [
+  Array.from(new Set(arrayEquipos.map((equipo) => equipo.asignado.provincia))),
+];
 
 const puestos = (arrayEquipos) => {};
 
