@@ -26,7 +26,7 @@ En el archivo `js/equipos.js` tienes un objeto con un listado de equipos asignad
 
 ```
 [
-  {
+  { 
     tipo: "Portátil",
     equipos: [(todos los equipos de tipo Portátil)]
   },
