@@ -1,10 +1,12 @@
+const esIgual = (texto1, texto2) =>
+  texto1.toLowerCase() === texto2.toLowerCase();
+
 const equiposMayoresEdad = (arrayEquipos, edad) =>
   arrayEquipos.filter((equipo) => equipo.asignado.empleado.edad >= edad);
 
 const equiposProvincia = (arrayEquipos, provincia) =>
-  arrayEquipos.filter(
-    (equipo) =>
-      equipo.asignado.provincia.toLowerCase() === provincia.toLowerCase()
+  arrayEquipos.filter((equipo) =>
+    esIgual(equipo.asignado.provincia, provincia)
   );
 
 const provincias = (arrayEquipos) => [
@@ -18,11 +20,12 @@ const edadMedia = (arrayEquipos) => {};
 const equiposPorEdad = (arrayEquipos) => {};
 
 const equiposTipo = (arrayEquipos, tipo) =>
-  arrayEquipos.filter(
-    (equipo) => equipo.tipo.toLowerCase() === tipo.toLowerCase()
-  );
+  arrayEquipos.filter((equipo) => esIgual(equipo.tipo, tipo));
 
-const trabajadoresTipo = (arrayEquipos, tipo) => {};
+const trabajadoresTipo = (arrayEquipos, tipo) =>
+  arrayEquipos
+    .filter((equipo) => esIgual(equipo.tipo, tipo))
+    .map((equipo) => equipo.asignado.empleado);
 
 const equiposPorTipo = (arrayEquipos) => {};
 
