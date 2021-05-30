@@ -45,24 +45,21 @@ const trabajadoresTipo = (arrayEquipos, tipo) =>
     .filter((equipo) => esIgual(equipo.tipo, tipo))
     .map((equipo) => equipo.asignado.empleado);
 
-const equiposPorTipo = (arrayEquipos) => [
-  ...new Set(
-    ...arrayEquipos.map((equipo) => [
-      {
-        tipo: "Portátil",
-        equipos: arrayEquipos.filter((equipo) =>
-          esIgual(equipo.tipo, "portátil")
-        ),
-      },
-      {
-        tipo: "Sobremesa",
-        equipos: arrayEquipos.filter((equipo) =>
-          esIgual(equipo.tipo, "sobremesa")
-        ),
-      },
-    ])
-  ),
-];
+const equiposPorTipo = (arrayEquipos) => {
+  const tiposExistentes = [
+    ...new Set(arrayEquipos.map((equipo) => equipo.tipo)),
+  ];
+  const arrayEquiposPorTipo = [];
+
+  tiposExistentes.forEach((tipos) => {
+    arrayEquiposPorTipo.push({
+      tipo: tipos,
+      equipos: arrayEquipos.filter((equipo) => esIgual(equipo.tipo, tipos)),
+    });
+  });
+
+  return arrayEquiposPorTipo;
+};
 
 const equiposTipoLocalidad = (arrayEquipos, tipo, localidad) =>
   arrayEquipos.filter(
