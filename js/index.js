@@ -8,6 +8,10 @@ const equiposProvincia = (arrayEquipos, provincia) =>
   arrayEquipos.filter((equipo) =>
     esIgual(equipo.asignado.provincia, provincia)
   );
+const provincias = (arrayEquipos) => [
+  ...new Set(arrayEquipos.map((equipo) => equipo.asignado.provincia)),
+];
+
 
 const provincias = (arrayEquipos) => [
   ...new Set(arrayEquipos.map((equipo) => equipo.asignado.provincia)),
@@ -77,4 +81,6 @@ const resumenEquipos = (arrayEquipos) =>
     (id = equipo.id),
     (poblacion = equipo.asignado.poblacion),
     (provincia = equipo.asignado.provincia),
+
   ]);
+
