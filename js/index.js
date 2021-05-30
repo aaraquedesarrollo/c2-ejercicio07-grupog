@@ -29,6 +29,16 @@ const trabajadoresTipo = (arrayEquipos, tipo) =>
 
 const equiposPorTipo = (arrayEquipos) => {};
 
-const equiposTipoLocalidad = (arrayEquipos, tipo, localidad) => {};
+const equiposTipoLocalidad = (arrayEquipos, tipo, localidad) =>
+  arrayEquipos.filter(
+    (equipo) =>
+      esIgual(equipo.tipo, tipo) &&
+      esIgual(equipo.asignado.poblacion, localidad)
+  );
 
-const resumenEquipos = (arrayEquipos) => {};
+const resumenEquipos = (arrayEquipos) =>
+  arrayEquipos.map((equipo) => [
+    (id = equipo.id),
+    (poblacion = equipo.asignado.poblacion),
+    (provincia = equipo.asignado.provincia),
+  ]);
