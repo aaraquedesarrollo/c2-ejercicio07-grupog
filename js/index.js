@@ -12,11 +12,6 @@ const provincias = (arrayEquipos) => [
   ...new Set(arrayEquipos.map((equipo) => equipo.asignado.provincia)),
 ];
 
-
-const provincias = (arrayEquipos) => [
-  ...new Set(arrayEquipos.map((equipo) => equipo.asignado.provincia)),
-];
-
 const puestos = (arrayEquipos) =>
   arrayEquipos.map((equipo) => equipo.asignado.empleado.puesto);
 
@@ -30,17 +25,17 @@ function edadMedia(array) {
   return `${edadMediaEmpleados} años de media`;
 }
 const equiposPorEdad = (arrayEquipos) =>
-arrayEquipos.sort((a, b) => {
-  const edadA = a.asignado.empleado.edad;
-  const edadB = b.asignado.empleado.edad;
-  if (edadA > edadB) {
-    return 1;
-  }
-  if (edadA < edadB) {
-    return -1;
-  }
-  return 0;
-});
+  arrayEquipos.sort((a, b) => {
+    const edadA = a.asignado.empleado.edad;
+    const edadB = b.asignado.empleado.edad;
+    if (edadA > edadB) {
+      return 1;
+    }
+    if (edadA < edadB) {
+      return -1;
+    }
+    return 0;
+  });
 
 const equiposTipo = (arrayEquipos, tipo) =>
   arrayEquipos.filter((equipo) => esIgual(equipo.tipo, tipo));
@@ -81,6 +76,4 @@ const resumenEquipos = (arrayEquipos) =>
     (id = equipo.id),
     (poblacion = equipo.asignado.poblacion),
     (provincia = equipo.asignado.provincia),
-
   ]);
-
